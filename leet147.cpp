@@ -1,0 +1,27 @@
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+#include<leetcode.h>
+using namespace std;
+class Solution
+{
+public:
+    ListNode *insertionSortList(ListNode *head)
+    {
+        ListNode dummy(0);
+        ListNode* curr = head;
+
+        while(curr != nullptr){
+            ListNode* nextNode = curr->next;
+            ListNode* prev = &dummy;
+
+            while(prev->next != nullptr && prev->next->val < curr->val){
+                prev = prev->next;
+            }
+            curr->next = prev->next;
+            prev->next = curr;
+            curr = nextNode;
+        }
+        return dummy.next;
+    }
+};
