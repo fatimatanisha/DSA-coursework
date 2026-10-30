@@ -29,6 +29,7 @@ public:
             }
         }
         //find last occurrence
+
         int left = 0, right = n-1;
         while (left <= right)
         {
@@ -41,7 +42,7 @@ public:
             } else {
                 right = mid-1;
             }
-            return {first, last};
         }
+        return {first, last};
     }
 };
