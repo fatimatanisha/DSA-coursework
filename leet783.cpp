@@ -5,6 +5,7 @@ using namespace std;
 class Solution {
 public:
     TreeNode* prev = NULL;
+    TreeNode *prev = NULL;
 
     int minDiffInBST(TreeNode* root) {
         if(root== NULL){
